@@ -1,45 +1,33 @@
-# TrendRadar 主配置文件
+# TrendRadar 主配置文件（v6.10.0 兼容）
 
-# ---------- 推送模式 ----------
+# 推送模式：daily 每天汇总一次，配合早上 9:30 定时
 push_mode: daily
 
-# ---------- 数据源（必须，否则不抓取任何新闻）----------
-sources:
-  - platform: baidu
-  - platform: zhihu
-  - platform: 36kr
-  - platform: bilibili
-  - platform: weibo
-  - platform: toutiao
-  - platform: thepaper
-  - platform: jiemian
-  - platform: caixin
+# 监控平台（关键！必须使用顶层的 platforms:）
+platforms:
+  - baidu
+  - zhihu
+  - 36kr
+  - bilibili
+  - weibo
+  - toutiao
+  - thepaper
+  - jiemian
+  - caixin
 
-# ---------- 显示控制 ----------
+# 显示控制
 display:
   show_keywords: false
   show_platforms: true
   show_rank: true
 
-# ---------- Telegram 通知 ----------
+# Telegram 通知
 notifications:
   telegram:
     enabled: true
 
-# ---------- AI 智能分析 ----------
+# AI 分析
 ai_analysis:
   enabled: true
   mode: follow_report
   timeout: 120
-
-# ---------- AI 翻译（可选）----------
-ai_translation:
-  enabled: false
-
-# ---------- 关键词文件 ----------
-keyword_file: "config/frequency_words.txt"
-
-# ---------- 输出 ----------
-output:
-  generate_html: true
-  html_filename: "index.html"
