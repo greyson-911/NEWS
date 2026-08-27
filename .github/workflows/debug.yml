@@ -1,0 +1,9 @@
+name: Debug Config
+on: workflow_dispatch
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Show config
+        run: cat config/config.yaml
