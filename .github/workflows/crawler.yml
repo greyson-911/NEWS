@@ -23,11 +23,34 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Debug config (打印配置，便于验证)
+      - name: Generate correct config
         run: |
-          echo "=== config.yaml 内容 ==="
+          cat > config/config.yaml << 'EOF'
+          push_mode: daily
+          sources:
+            - platform: baidu
+            - platform: zhihu
+            - platform: 36kr
+            - platform: bilibili
+            - platform: weibo
+            - platform: toutiao
+            - platform: thepaper
+            - platform: jiemian
+            - platform: caixin
+          display:
+            show_keywords: false
+            show_platforms: true
+            show_rank: true
+          notifications:
+            telegram:
+              enabled: true
+          ai_analysis:
+            enabled: true
+            mode: follow_report
+            timeout: 120
+          EOF
+          echo "Generated config.yaml:"
           cat config/config.yaml
-          echo "========================"
 
       - name: Run crawler
         env:
