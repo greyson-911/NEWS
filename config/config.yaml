@@ -1,12 +1,9 @@
 # TrendRadar 主配置文件
 
 # ---------- 推送模式 ----------
-# daily: 每天汇总推送一次（推荐，配合早上9:30定时）
-# current: 实时榜单（每小时）
-# incremental: 仅推送新增内容
 push_mode: daily
 
-# ---------- 数据源配置（必须！否则不会抓取任何新闻）----------
+# ---------- 数据源（必须，否则不抓取任何新闻）----------
 sources:
   - platform: baidu
   - platform: zhihu
@@ -20,7 +17,7 @@ sources:
 
 # ---------- 显示控制 ----------
 display:
-  show_keywords: false      # 不显示关键词列表
+  show_keywords: false
   show_platforms: true
   show_rank: true
 
