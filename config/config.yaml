@@ -1,32 +1,28 @@
-# TrendRadar 主配置文件（v6.10.0 兼容）
+# TrendRadar 主配置（v6.10.0 正确格式）
 
-# 推送模式：daily 每天汇总一次，配合早上 9:30 定时
 push_mode: daily
 
-# 监控平台（关键！必须使用顶层的 platforms:）
-platforms:
-  - baidu
-  - zhihu
-  - 36kr
-  - bilibili
-  - weibo
-  - toutiao
-  - thepaper
-  - jiemian
-  - caixin
+# 监控源：每个源用 - platform: 名称 的格式
+sources:
+  - platform: baidu
+  - platform: zhihu
+  - platform: 36kr
+  - platform: bilibili
+  - platform: weibo
+  - platform: toutiao
+  - platform: thepaper
+  - platform: jiemian
+  - platform: caixin
 
-# 显示控制
 display:
   show_keywords: false
   show_platforms: true
   show_rank: true
 
-# Telegram 通知
 notifications:
   telegram:
     enabled: true
 
-# AI 分析
 ai_analysis:
   enabled: true
   mode: follow_report
