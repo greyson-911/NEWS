@@ -1,3 +1,7 @@
+# 强制指定监控平台（绕过配置文件）
+import os
+os.environ['TRENDRADAR_PLATFORMS'] = 'baidu,zhihu,36kr,bilibili,weibo,toutiao,thepaper,jiemian,caixin'
+
 # coding=utf-8
 """
 TrendRadar 主程序
