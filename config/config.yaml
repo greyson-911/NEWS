@@ -44,3 +44,10 @@ keyword_file: "config/frequency_words.txt"
 output:
   generate_html: true
   html_filename: "index.html"
+
+# 在 config.yaml 末尾添加
+notifications:
+  telegram:
+    enabled: true
+    bot_token: ""   # 留空，程序会从环境变量读取
+    chat_id: ""     # 留空
