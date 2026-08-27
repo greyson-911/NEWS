@@ -23,6 +23,12 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Debug config (打印配置，便于验证)
+        run: |
+          echo "=== config.yaml 内容 ==="
+          cat config/config.yaml
+          echo "========================"
+
       - name: Run crawler
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -32,4 +38,4 @@ jobs:
           AI_PROVIDER: ${{ secrets.AI_PROVIDER }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: |
-          python -m trendradar --platforms baidu,zhihu,36kr,bilibili,weibo,toutiao,thepaper,jiemian,caixin
+          python -m trendradar
