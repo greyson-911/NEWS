@@ -8,7 +8,7 @@ on:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -31,5 +31,5 @@ jobs:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_PROVIDER: ${{ secrets.AI_PROVIDER }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
-    run: |
-    python -m trendradar --platforms baidu,zhihu,36kr,bilibili,weibo,toutiao,thepaper,jiemian,caixin,youtube,tiktok,facebook
+        run: |
+          python -m trendradar --platforms baidu,zhihu,36kr,bilibili,weibo,toutiao,thepaper,jiemian,caixin
